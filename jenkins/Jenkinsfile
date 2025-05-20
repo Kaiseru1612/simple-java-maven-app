@@ -3,6 +3,10 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
+    environment {
+        MAVEN_HOME = tool 'Maven_3.9.9'
+        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+    }
     stages {
         stage('Build') {
             steps {
